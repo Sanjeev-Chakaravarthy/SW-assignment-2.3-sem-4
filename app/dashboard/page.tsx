@@ -1,9 +1,13 @@
 export const dynamic = 'force-dynamic';
 
 async function getMetrics() {
-  const res = await fetch('http://localhost:3000/api/metrics', {
-    cache: 'no-store',
+  const apiUrl =
+    process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+
+  const res = await fetch(`${apiUrl}/api/metrics`, {
+    cache: "no-store",
   });
+
   return res.json();
 }
 

@@ -1,3 +1,5 @@
+const env = process.env.NODE_ENV || "unknown";
+
 export default function RootLayout({
   children,
 }: {
@@ -7,6 +9,9 @@ export default function RootLayout({
     <html lang="en">
       <body style={{ fontFamily: 'sans-serif', padding: 20 }}>
         <h1>Kalvium – Advanced Rendering Demo</h1>
+        <p style={{ fontSize: 12, color: "#555" }}>
+          Environment: <strong>{env}</strong>
+        </p>
         <nav style={{ display: 'flex', gap: 16 }}>
           <a href="/">Home</a>
           <a href="/about">About (SSG)</a>
