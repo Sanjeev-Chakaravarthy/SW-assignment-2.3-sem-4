@@ -47,3 +47,26 @@ Using **SSG and ISR wherever possible** reduces server load and improves perform
 
 ## Conclusion
 Choosing the right rendering strategy per page leads to faster load times, better scalability, and lower infrastructure costs in real-world Next.js applications.
+
+---
+
+## Environment-Aware Builds & Secrets Management (Concept-2)
+
+### Environment Segregation
+This project uses separate environment configuration files for different stages of deployment:
+- `.env.development`
+- `.env.staging`
+- `.env.production`
+
+Each environment points to different API endpoints and configuration values, ensuring that development or staging settings never affect production.
+
+### Secure Secret Management
+Real secrets such as database credentials and API keys are never committed to the repository.  
+Only `.env.example` is tracked, while actual values are injected securely using tools like **GitHub Secrets** in real production deployments.
+
+### Case Study: ShopLite Incident
+In the ShopLite case study, staging database credentials were mistakenly used in production, overwriting live data.  
+This project prevents such issues by enforcing strict environment separation and secure secret handling.
+
+### CI/CD Reliability
+Environment-aware builds improve CI/CD reliability by enabling safe testing in staging environments before production deployment, reducing downtime and deployment risks.
