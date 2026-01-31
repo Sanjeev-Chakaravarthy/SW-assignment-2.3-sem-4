@@ -4,7 +4,7 @@ async function getMetrics() {
   const apiUrl =
     process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
 
-  const res = await fetch(`${apiUrl}/api/metrics`, {
+  const res = await fetch(`${apiUrl}/metrics`, {
     cache: "no-store",
   });
 
