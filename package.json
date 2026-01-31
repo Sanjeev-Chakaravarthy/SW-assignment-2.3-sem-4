@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "build:development": "NODE_ENV=development next build",
-    "build:staging": "NODE_ENV=staging next build",
-    "build:production": "NODE_ENV=production next build",
-    "start": "next start",
+    "dev": "node init && next dev",
+    "build": "node init && next build",
+    "build:development": "node init && NODE_ENV=development next build",
+    "build:staging": "node init && NODE_ENV=staging next build",
+    "build:production": "node init && NODE_ENV=production next build",
+    "start": "node init && next start",
     "lint": "eslint"
   },
   "dependencies": {
